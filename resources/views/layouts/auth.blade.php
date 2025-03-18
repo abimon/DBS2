@@ -74,7 +74,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Usalama Admin</title>
+        <title>THe Heart-Ed Authentication</title>
         <!-- base:css -->
         <link rel="stylesheet" href="/storage/front/vendors/typicons/typicons.css">
         <link rel="stylesheet" href="/storage/front/vendors/css/vendor.bundle.base.css">
