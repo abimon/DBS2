@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>THe Heart-Ed Authentication</title>
     <!-- base:css -->
-    <link rel="stylesheet" href="/storage/front/vendors/typicons/typicons.css">
-    <link rel="stylesheet" href="/storage/front/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/storage/back/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="/storage/back/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="/storage/front/css/style.css">
+    <link rel="stylesheet" href="/storage/back/css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="/storage/front/images/favicon.ico" />
+    <link rel="shortcut icon" href="/storage/back/images/favicon.ico" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-start py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="/storage/front/images/logo-dark.svg" alt="logo">
+                                <img src="/storage/back/images/logo-dark.svg" alt="logo">
                             </div>
                             @yield('form')
                         </div>
@@ -39,14 +39,14 @@
     </div>
     <!-- container-scroller -->
     <!-- base:js -->
-    <script src="/storage/front/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/storage/back/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- inject:js -->
-    <script src="/storage/front/js/off-canvas.js"></script>
-    <script src="/storage/front/js/hoverable-collapse.js"></script>
-    <script src="/storage/front/js/template.js"></script>
-    <script src="/storage/front/js/settings.js"></script>
-    <script src="/storage/front/js/todolist.js"></script>
+    <script src="/storage/back/js/off-canvas.js"></script>
+    <script src="/storage/back/js/hoverable-collapse.js"></script>
+    <script src="/storage/back/js/template.js"></script>
+    <script src="/storage/back/js/settings.js"></script>
+    <script src="/storage/back/js/todolist.js"></script>
     <!-- endinject -->
 </body>
 
