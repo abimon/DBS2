@@ -4,6 +4,7 @@ use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AttemptController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
@@ -16,7 +17,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::controller(HomeController::class)->group(function (){
+    Route::get('/courses', 'courses');
+});
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resources([

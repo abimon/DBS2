@@ -58,7 +58,7 @@ class ThemeController extends Controller
     public function show($id)
     {
         $theme = Theme::findOrFail($id);
-        return view('dashboard.course.index',compact('$theme'));
+        return view('dashboard.course.index',compact('theme'));
     }
 
     /**

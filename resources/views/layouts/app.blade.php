@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>THE HEART-ED | {{ $title }}</title>
     <!-- base:css -->
-    <link rel="stylesheet" href="/storage/front/vendors/typicons/typicons.css" />
-    <link rel="stylesheet" href="/storage/front/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="/storage/back/vendors/typicons/typicons.css" />
+    <link rel="stylesheet" href="/storage/back/vendors/css/vendor.bundle.base.css" />
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="/storage/front/css/style.css" />
+    <link rel="stylesheet" href="/storage/back/css/style.css" />
     <!-- endinject -->
-    <link rel="shortcut icon" href="/storage/front/images/favicon.ico" />
+    <link rel="shortcut icon" href="/storage/back/images/favicon.ico" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -41,7 +41,7 @@
                 <ul class="navbar-nav me-lg-2">
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                            <img src="/storage/front/images/faces/face5.jpg" alt="profile" />
+                            <img src="/storage/back/images/faces/face5.jpg" alt="profile" />
                             <span class="nav-profile-name">{{ Auth()->user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
@@ -107,7 +107,7 @@
                             </p>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="/storage/front/images/faces/face4.jpg" alt="image" class="profile-pic" />
+                                    <img src="/storage/back/images/faces/face4.jpg" alt="image" class="profile-pic" />
                                 </div>
                                 <div class="preview-item-content flex-grow">
                                     <h6 class="preview-subject ellipsis fw-normal">
@@ -120,7 +120,7 @@
                             </a>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="/storage/front/images/faces/face2.jpg" alt="image" class="profile-pic" />
+                                    <img src="/storage/back/images/faces/face2.jpg" alt="image" class="profile-pic" />
                                 </div>
                                 <div class="preview-item-content flex-grow">
                                     <h6 class="preview-subject ellipsis fw-normal">
@@ -133,7 +133,7 @@
                             </a>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="/storage/front/images/faces/face3.jpg" alt="image" class="profile-pic" />
+                                    <img src="/storage/back/images/faces/face3.jpg" alt="image" class="profile-pic" />
                                 </div>
                                 <div class="preview-item-content flex-grow">
                                     <h6 class="preview-subject ellipsis fw-normal">
@@ -274,38 +274,33 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false"
-                            aria-controls="ui-basic">
+                        <a class="nav-link" href="/courses">
                             <i class="bi bi-journals menu-icon"></i>
                             <span class="menu-title">Courses</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false"
-                            aria-controls="form-elements">
+                        <a class="nav-link" href="/resources">
                             <i class="bi bi-folder2-open menu-icon"></i>
                             <span class="menu-title">Resources</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false"
-                            aria-controls="icons">
+                        <a class="nav-link" href="/my-courses">
                             <i class="bi bi-book-fill menu-icon"></i>
                             <span class="menu-title">My Courses</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false"
-                            aria-controls="auth">
+                        <a class="nav-link" href="/learners">
                             <i class="bi bi-person-video2 menu-icon"></i>
                             <span class="menu-title">Learners</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false"
-                            aria-controls="auth">
+                        <a class="nav-link" href="/instructors">
                             <i class="bi bi-person-workspace menu-icon"></i>
                             <span class="menu-title">Instructors</span>
                         </a>
@@ -350,21 +345,21 @@
     <!-- container-scroller -->
 
     <!-- base:js -->
-    <script src="/storage/front/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/storage/back/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
-    <script src="/storage/front/vendors/chart.js/chart.umd.js"></script>
-    <script src="/storage/front/js/jquery.cookie.js"></script>
+    <script src="/storage/back/vendors/chart.js/chart.umd.js"></script>
+    <script src="/storage/back/js/jquery.cookie.js"></script>
     <!-- End plugin js for this page-->
     <!-- inject:js -->
-    <script src="/storage/front/js/off-canvas.js"></script>
-    <script src="/storage/front/js/hoverable-collapse.js"></script>
-    <script src="/storage/front/js/template.js"></script>
-    <script src="/storage/front/js/settings.js"></script>
-    <script src="/storage/front/js/todolist.js"></script>
+    <script src="/storage/back/js/off-canvas.js"></script>
+    <script src="/storage/back/js/hoverable-collapse.js"></script>
+    <script src="/storage/back/js/template.js"></script>
+    <script src="/storage/back/js/settings.js"></script>
+    <script src="/storage/back/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="/storage/front/js/dashboard.js"></script>
+    <script src="/storage/back/js/dashboard.js"></script>
     <!-- End custom js for this page-->
 </body>
 
