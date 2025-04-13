@@ -82,6 +82,7 @@
                     user_id: '{{ Auth()->user()->id }}'
                 },
                 success: function (data) {
+                    console.log(data.responseJSON.message);
                     document.getElementById('message2').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').class = 'text-success';
                     $('#enrollModalsuccess').modal('show');
