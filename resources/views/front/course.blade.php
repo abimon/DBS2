@@ -54,6 +54,22 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="enrollModalsuccess" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="enrollModalLabel">Enroll in the course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <div class="display-6 text-center">
+                        <div id="message"></div>
+                        <i class="fas fa-check-circle fa-3x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         // Ajax submit course id to route enroll/store using post method
         function enroll(course_id) {
@@ -68,8 +84,7 @@
                 success: function (data) {
                     document.getElementById('message').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').class = 'text-success';
-                    // document.getElementById('icon').class = 'fa fa-check-circle fa-3x';
-                    $('#enrollModal').modal('show');
+                    $('#enrollModalsuccess').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
                     }, 5000);
@@ -77,7 +92,6 @@
                 error: function (data) {
                     document.getElementById('message').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').style.color = 'red';
-                    // document.getElementById('icon').class= 'fas fa-exclamation-circle fa-3x';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
