@@ -27,7 +27,8 @@
                             <?php    echo html_entity_decode($course->curriculum);?>
                             <h2 class="display-12">{{ $course->modules->count() }} Modules</h2>
                             <div class="d-flex justify-content-end">
-                                <button class="btn btn-primary btn-lg" onclick="enroll(<?php    echo $course->id;?>)">Enroll</button>
+                                <button class="btn btn-primary btn-lg"
+                                    onclick="enroll(<?php    echo $course->id;?>)">Enroll</button>
                             </div>
                         </div>
                     @endif
@@ -35,11 +36,7 @@
             </div>
         </div>
     </div>
-    <!-- modal button -->
-    <div class="d-flex justify-content-end">
-        <button class="btn btn-primary btn-lg" data-bs-target="#enrollModal" data-bs-toggle="modal">Enroll</button>
     </div>
-</div>
     <!-- Modal for successifully enrolling in the course -->
     <div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -58,9 +55,9 @@
         // Ajax submit course id to route enroll/store using post method
         function enroll(course_id) {
             $('#enrollmodal').modal('show');
-            setTimeout(function () {
-                $('#enrollmodal').modal('hide');
-            }, 5000);
-            }
+            // setTimeout(function () {
+            //     $('#enrollmodal').modal('hide');
+            // }, 5000);
+        }
     </script>
 @endsection
