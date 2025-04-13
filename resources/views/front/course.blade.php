@@ -14,12 +14,8 @@
                 </nav>
             </div>
         </div>
-        <div class="container-xxl py-6">
+        <div class="container-xxl">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-primary text-uppercase mb-2">{{$course->title}}</h6>
-
-                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="display-6 mb-4">Course Description</h1>
