@@ -24,13 +24,15 @@
                     @if($course->curriculum != null)
                         <div class="col-md-6">
                             <h1 class="display-6 mb-4">Course Curriculum</h1>
-                            <?php echo html_entity_decode($course->curriculum);?>
+                            <?php    echo html_entity_decode($course->curriculum);?>
                             <h2 class="display-12">{{ $course->modules->count() }} Modules</h2>
                         </div>
                     @endif
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary">Enroll</button>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-primary btn-lg">Enroll</button>
+        </div>
     </div>
 @endsection
