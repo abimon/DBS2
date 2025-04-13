@@ -25,7 +25,7 @@
                         <div class="col-md-6">
                             <h1 class="display-6 mb-4">Course Curriculum</h1>
                             <?php echo html_entity_decode($course->curriculum);?>
-                            <h2 class="display-5">{{ $course->modules->count() }} Modules</h2>
+                            <h2 class="display-1">{{ $course->modules->count() }} Modules</h2>
                         </div>
                     @endif
                 </div>
