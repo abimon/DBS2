@@ -15,7 +15,7 @@ class ThemeController extends Controller
     public function index()
     {
         $themes = Theme::all();
-        return view('dashboard.theme.index',compact('themes'));
+        return view('dashboard.theme.index', compact('themes'));
     }
 
     /**
@@ -33,23 +33,24 @@ class ThemeController extends Controller
     {
         //
         $this->validate(request(), [
-            "title"=>'required',
-            "description"=>'required',
-            'cover'=>'required|image',
+            "title" => 'required',
+            "description" => 'required',
+            'cover' => 'required|image',
         ]);
-        if(request()->hasFile('cover')){
+        if (request()->hasFile('cover')) {
             $image = request()->file('cover');
             $extension = $image->getClientOriginalExtension();
-            $filename = time(). '.'. $extension;
-            $image->move('storage/uploads/themes',$filename);
+            $filename = time() . '.' . $extension;
+            $image->move('storage/uploads/themes', $filename);
         }
         Theme::create([
-            'title'=> request('title'),
-            'description'=> request('description'),
-            'cover'=>'/storage/uploads/themes/'.$filename,
-            'created_by'=> Auth::user()->id,
+            'title' => request('title'),
+            'slug' => str()->slug(request('title')),
+            'description' => request('description'),
+            'cover' => '/storage/uploads/themes/' . $filename,
+            'created_by' => Auth::user()->id,
         ]);
-        return redirect()->route('theme.index')->with('success','THeme created successfully.');
+        return redirect()->route('theme.index')->with('success', 'THeme created successfully.');
     }
 
     /**
@@ -58,7 +59,7 @@ class ThemeController extends Controller
     public function show($id)
     {
         $theme = Theme::findOrFail($id);
-        return view('dashboard.course.index',compact('theme'));
+        return view('dashboard.course.index', compact('theme'));
     }
 
     /**
@@ -67,7 +68,7 @@ class ThemeController extends Controller
     public function edit($id)
     {
         $theme = Theme::findOrFail($id);
-        return view('dashboard.theme.edit',compact('theme'));
+        return view('dashboard.theme.edit', compact('theme'));
     }
 
     /**
@@ -77,21 +78,22 @@ class ThemeController extends Controller
     {
         //
         $theme = Theme::findOrFail($id);
-        if(request('title')!=null){
-            $theme->title=request('title');
+        if (request('title') != null) {
+            $theme->title = request('title');
+            $theme->slug = str()->slug(request('title'));
         }
-        if(request('description')!=null){
-            $theme->description=request('description');
+        if (request('description') != null) {
+            $theme->description = request('description');
         }
         if (request()->hasFile('cover')) {
             $image = request()->file('cover');
             $extension = $image->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
             $image->move('storage/uploads/themes', $filename);
-            $theme->cover = '/storage/uploads/themes/'. $filename;
+            $theme->cover = '/storage/uploads/themes/' . $filename;
         }
         $theme->update();
-        return redirect()->route('theme.index')->with('success','Theme updated successfully.');                                                                                                  
+        return redirect()->route('theme.index')->with('success', 'Theme updated successfully.');
     }
 
     /**
@@ -101,6 +103,6 @@ class ThemeController extends Controller
     {
         //
         Theme::destroy($id);
-        return redirect()->route('theme.index')->with('success','Theme deleted successfully.');
+        return redirect()->route('theme.index')->with('success', 'Theme deleted successfully.');
     }
 }

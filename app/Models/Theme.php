@@ -8,6 +8,7 @@ class Theme extends Model
 {
     protected $fillable = [
         "title",
+        'slug',
         'cover',
         "description",
         "created_by"

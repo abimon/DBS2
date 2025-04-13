@@ -8,6 +8,7 @@ class Quiz extends Model
 {
     protected $fillable = [
         'title', 
+        'slug',
         'description',
         'module_id'
     ];

@@ -16,4 +16,14 @@ class HomeController extends Controller
         $courses = Course::all();
         return view('front.courses',compact('courses'));
     }
+    public function courses_view($slug){
+        $course = Course::where('slug',$slug)->first();
+        return view('front.course',compact('course'));
+    }
+    public function about(){
+        return view('front.about');
+    }
+    public function contact(){
+        return view('front.contact');
+    }
 }

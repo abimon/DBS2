@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('themes', function (Blueprint $table) {
             $table->id();
             $table->string("title");
+            $table->string("slug");
             $table->longText("description");
             $table->string('cover');
             $table->unsignedBigInteger("created_by");

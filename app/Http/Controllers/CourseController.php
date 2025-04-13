@@ -15,8 +15,8 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        $theme=Theme::findOrFail(request('theme_id'));
-        return view("dashboard.course.index", compact("courses",'theme'));
+        $theme = Theme::findOrFail(request('theme_id'));
+        return view("dashboard.course.index", compact("courses", 'theme'));
     }
 
     /**
@@ -24,8 +24,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        $theme=request('theme_id');
-        return view("dashboard.course.create",compact('theme'));
+        $theme = request('theme_id');
+        return view("dashboard.course.create", compact('theme'));
     }
 
     /**
@@ -34,29 +34,30 @@ class CourseController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            "title"=>'required',
-            "description"=>'required',
-            "duration"=>'required',
-            "theme_id"=>'required',
+            "title" => 'required',
+            "description" => 'required',
+            "duration" => 'required',
+            "theme_id" => 'required',
+            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048`'
         ]);
-        if(request()->hasFile('cover')){
+        if (request()->hasFile('cover')) {
             $file = request()->file('cover');
-            $filename = time().$file->getClientOriginalExtension();
-            $file->move('storage/uploads/course/',$filename);
-        }
-        else{
-            return back()->with('error','Please select a cover image')->withInput();
+            $filename = time() . $file->getClientOriginalExtension();
+            $file->move('storage/uploads/course/', $filename);
+        } else {
+            return back()->with('error', 'Please select a cover image')->withInput();
         }
         Course::create([
-            'title'=> request('title'),
-            'description'=> request('description'),
-            'estimate_duration'=> request('duration'),
-            'cover'=> '/storage/uploads/course/'.$filename,
-            'theme_id'=> request('theme_id'),
-            'curriculum'=> request('curriculum')!=null?request('curriculum'):'Not available yet',
-            'created_by'=> Auth::user()->id,
+            'title' => request('title'),
+            'slug' => str()->slug(request('title')),
+            'description' => request('description'),
+            'estimate_duration' => request('duration'),
+            'cover' => '/storage/uploads/course/' . $filename,
+            'theme_id' => request('theme_id'),
+            'curriculum' => request('curriculum') != null ? request('curriculum') : 'Not available yet',
+            'created_by' => Auth::user()->id,
         ]);
-        return redirect()->route('course.index',['theme_id'=>request('theme_id')])->with('success', 'Course created successfully');
+        return redirect()->route('course.index', ['theme_id' => request('theme_id')])->with('success', 'Course created successfully');
     }
 
     /**
@@ -64,7 +65,7 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        
+
         $course = Course::findOrFail($id);
         return view("dashboard.modules.index", compact("course"));
     }
@@ -76,7 +77,7 @@ class CourseController extends Controller
     {
         $course = Course::findOrFail($id);
         return view("dashboard.course.edit", compact("course"));
-    
+
     }
 
     /**
@@ -87,28 +88,29 @@ class CourseController extends Controller
         //
         // dd(request());
         $course = Course::findOrFail($id);
-        if(request('title')!=null){
-            $course->title=request('title');
+        if (request('title') != null) {
+            $course->title = request('title');
+            $course->slug = str()->slug(request('title'));
         }
-        if(request('description')!=null){
-            $course->description=request('description');
+        if (request('description') != null) {
+            $course->description = request('description');
         }
-        if(request('estimate_duration')!=null){
-            $course->estimate_duration=request('estimate_duration');
+        if (request('estimate_duration') != null) {
+            $course->estimate_duration = request('estimate_duration');
         }
-        if(request('curriculum')!=null){
-            $course->curriculum=request('curriculum');
+        if (request('curriculum') != null) {
+            $course->curriculum = request('curriculum');
         }
-        if(request()->hasFile('cover')){
+        if (request()->hasFile('cover')) {
             $file = request()->file('cover');
             // if(r){}
-            $filename = time().$file->getClientOriginalExtension();
-            $file->move('storage/uploads/course/',$filename);
-            $course->cover='/storage/uploads/course/'.$filename;
+            $filename = time() . $file->getClientOriginalExtension();
+            $file->move('storage/uploads/course/', $filename);
+            $course->cover = '/storage/uploads/course/' . $filename;
         }
 
         $course->update();
-        return redirect()->route('course.index',['theme_id'=>$course->theme_id])->with('success', 'Course updated successfully');
+        return redirect()->route('course.index', ['theme_id' => $course->theme_id])->with('success', 'Course updated successfully');
     }
 
     /**

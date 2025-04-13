@@ -9,6 +9,7 @@ class Module extends Model
     //
     protected $fillable = [
         'title',
+        'slug',
         'content',
         'course_id',
     ];

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Enroll;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EnrollController extends Controller
 {
@@ -37,6 +38,11 @@ class EnrollController extends Controller
     public function show(Enroll $enroll)
     {
         //
+        Enroll::create([
+            'user_id' => Auth::user()->id,
+            'course_id' => request('course_id'),
+        ]);
+        return response()->json(['message' => 'Enrolled Successfully'],200);
     }
 
     /**

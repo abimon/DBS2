@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::controller(HomeController::class)->group(function (){
     Route::get('/courses', 'courses');
+    Route::get('/courses/{course}','');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
