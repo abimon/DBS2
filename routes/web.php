@@ -14,16 +14,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect('/home');
+    return redirect('/courses');
 });
 
 Auth::routes();
 Route::controller(HomeController::class)->group(function (){
     Route::get('/courses', 'courses');
+    Route::get('/dashboard', 'index')->middleware('auth');
     Route::get('/courses/{course}','courses_view')->middleware('auth');
 });
 Route::middleware('auth')->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    
     Route::resources([
         'theme'=>ThemeController::class,
         'course'=>CourseController::class,
