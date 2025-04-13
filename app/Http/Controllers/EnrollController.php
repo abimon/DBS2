@@ -29,7 +29,11 @@ class EnrollController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Enroll::create([
+            'user_id' => Auth::user()->id,
+            'course_id' => request('course_id'),
+        ]);
+        return response()->json(['message' => 'Enrolled Successfully'], 200);
     }
 
     /**
@@ -37,13 +41,7 @@ class EnrollController extends Controller
      */
     public function show(Enroll $enroll)
     {
-        dd(request());
-        //
-        Enroll::create([
-            'user_id' => Auth::user()->id,
-            'course_id' => request('course_id'),
-        ]);
-        return response()->json(['message' => 'Enrolled Successfully'],200);
+        
     }
 
     /**
