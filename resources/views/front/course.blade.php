@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-body" id="modal-body">
                     <div class="display-6 text-center">
-                        <div id="message"></div>
+                        <div>You are already enrolled for this course</div>
                         <i class="fas fa-exclamation-circle fa-3x"></i>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="modal-body" id="modal-body">
                     <div class="display-6 text-center">
-                        <div id="message2"></div>
+                        <div>You have successifully enrolled for this course</div>
                         <i class="fas fa-check-circle fa-3x"></i>
                     </div>
                 </div>
@@ -82,12 +82,9 @@
                     user_id: '{{ Auth()->user()->id }}'
                 },
                 success: function (data) {
-                    console.log(data.responseJSON);
-                    document.getElementById('message2').innerHTML = data.responseJSON.message;
-                    document.getElementById('modal-body').class = 'text-success';
                     $('#enrollModalsuccess').modal('show');
                     setTimeout(function () {
-                        $('#enrollModal').modal('hide');
+                        $('#enrollModalsuccess').modal('hide');
                     }, 5000);
                 },
                 error: function (data) {
