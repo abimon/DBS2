@@ -26,13 +26,14 @@
                             <h1 class="display-6 mb-4">Course Curriculum</h1>
                             <?php    echo html_entity_decode($course->curriculum);?>
                             <h2 class="display-12">{{ $course->modules->count() }} Modules</h2>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-primary btn-lg">Enroll</button>
+                            </div>
                         </div>
                     @endif
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-end">
-            <button class="btn btn-primary btn-lg">Enroll</button>
-        </div>
+
     </div>
 @endsection
