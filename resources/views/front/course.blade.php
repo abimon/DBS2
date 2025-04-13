@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-body" id="modal-body">
                     <div class="display-6 text-center">
-                        <div>You are already enrolled for this course</div>
+                        <div>Already enrolled.</div>
                         <i class="fas fa-exclamation-circle fa-3x"></i>
                     </div>
                 </div>
@@ -62,8 +62,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modal-body">
-                    <div class="display-6 text-center">
-                        <div>You have successifully enrolled for this course</div>
+                    <div class="display-6 text-center text-success">
+                        <div>Enrolled successifully</div>
                         <i class="fas fa-check-circle fa-3x"></i>
                     </div>
                 </div>
@@ -85,14 +85,14 @@
                     $('#enrollModalsuccess').modal('show');
                     setTimeout(function () {
                         $('#enrollModalsuccess').modal('hide');
-                    }, 5000);
+                    }, 3000);
                 },
                 error: function (data) {
                     document.getElementById('modal-body').style.color = 'red';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
-                    }, 5000);
+                    }, 3000);
                 }
             });
 
