@@ -52,25 +52,10 @@
     <script>
         // Ajax submit course id to route enroll/store using post method
         function enroll(course_id) {
-            $.ajax({
-                url: "{{ route('enroll.store') }}",
-                type: "POST",
-                data: {
-                    course_id: course_id,
-                    _token: "{{ csrf_token() }}",
-                    user_id:'{{ Auth()->user()->id }}'
-                },
-                success: function (data) {
-                    // show enrollmodal that will automatically close after 5 seconds
-                    $('#enrollmodal').modal('show');
-                    setTimeout(function () {
-                        $('#enrollmodal').modal('hide');
-                    }, 5000);
-                },
-                error: function (data) {
-                    alert(data.responseJSON.message);
-                }
-            });
-        }
+            $('#enrollmodal').modal('show');
+            setTimeout(function () {
+                $('#enrollmodal').modal('hide');
+            }, 5000);
+            }
     </script>
 @endsection
