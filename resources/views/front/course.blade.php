@@ -1,8 +1,8 @@
 @extends('layouts.index', ['title' => $course->title])
 @section('content')
     <div class="container-fluid">
-        <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container text-center" style="background-image: url(<?php echo $course->cover;?>);">
+        <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s" style="background-image: url(<?php echo $course->cover;?>);">
+            <div class="container text-center" >
                 <h1 class="display-5 text-white animated slideInDown mb-4">{{$course->title}}</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
