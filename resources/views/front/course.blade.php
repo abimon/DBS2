@@ -46,9 +46,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="display-6 text-center text-success">
+                    <div class="display-6 text-center">
                         <div id="message"></div>
-                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-check-circle fa-3x"></i>
                     </div>
                 </div>
             </div>
@@ -67,6 +67,7 @@
                 },
                 success: function (data) {
                     document.getElementById('message').innerHTML = data.responseJSON.message;
+                    document.getElementById('modal-body').class = 'text-success';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
@@ -74,6 +75,7 @@
                 },
                 error: function (data) {
                     document.getElementById('message').innerHTML = data.responseJSON.message;
+                    document.getElementById('modal-body').class = 'text-danger';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');

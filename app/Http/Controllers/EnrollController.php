@@ -36,7 +36,7 @@ class EnrollController extends Controller
                 'student_id' => request('user_id'),
                 'course_id' => request('course_id'),
             ]);
-            return response()->json(['message' => 'Enrolled for this Successfully'], 200);
+            return response()->json(['message' => 'Enrolled for this course Successfully'], 200);
         }
     }
 
