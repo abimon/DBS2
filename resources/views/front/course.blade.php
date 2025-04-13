@@ -77,7 +77,7 @@
                 error: function (data) {
                     document.getElementById('message').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').style.color = 'red';
-                    document.getElementById('icon').class= 'fa fa-exclamation-circle fa-3x';
+                    document.getElementById('icon').class= 'fas fa-exclamation-circle fa-3x';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
