@@ -55,6 +55,7 @@
         // Ajax submit course id to route enroll/store using post method
         function enroll(course_id) {
                 $('#enrollmodal').modal('show');
+                console.log('button clicked');
         }
     </script>
 @endsection
