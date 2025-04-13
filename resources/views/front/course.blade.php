@@ -66,14 +66,18 @@
                     user_id: '{{ Auth()->user()->id }}'
                 },
                 success: function (data) {
-                    document.getElementById('message').innerHTML = data.message;
+                    document.getElementById('message').innerHTML = data.responseJSON.message;
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
                     }, 5000);
                 },
                 error: function (data) {
-                    alert(data.responseJSON.message);
+                    document.getElementById('message').innerHTML = data.responseJSON.message;
+                    $('#enrollModal').modal('show');
+                    setTimeout(function () {
+                        $('#enrollModal').modal('hide');
+                    }, 5000);
                 }
             });
 
