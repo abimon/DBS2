@@ -88,7 +88,6 @@
                     }, 5000);
                 },
                 error: function (data) {
-                    document.getElementById('message').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').style.color = 'red';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
