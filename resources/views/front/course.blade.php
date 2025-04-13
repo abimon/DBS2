@@ -48,7 +48,7 @@
                 <div class="modal-body" id="modal-body">
                     <div class="display-6 text-center">
                         <div id="message"></div>
-                        <i id="icon"></i>
+                        <i class="fas fa-exclamation-circle fa-3x"></i>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 success: function (data) {
                     document.getElementById('message').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').class = 'text-success';
-                    document.getElementById('icon').class = 'fa fa-check-circle fa-3x';
+                    // document.getElementById('icon').class = 'fa fa-check-circle fa-3x';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
@@ -77,7 +77,7 @@
                 error: function (data) {
                     document.getElementById('message').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').style.color = 'red';
-                    document.getElementById('icon').class= 'fas fa-exclamation-circle fa-3x';
+                    // document.getElementById('icon').class= 'fas fa-exclamation-circle fa-3x';
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
