@@ -37,6 +37,7 @@ class EnrollController extends Controller
      */
     public function show(Enroll $enroll)
     {
+        dd(request());
         //
         Enroll::create([
             'user_id' => Auth::user()->id,
