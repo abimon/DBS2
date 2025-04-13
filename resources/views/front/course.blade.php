@@ -27,13 +27,32 @@
                             <?php    echo html_entity_decode($course->curriculum);?>
                             <h2 class="display-12">{{ $course->modules->count() }} Modules</h2>
                             <div class="d-flex justify-content-end">
-                                <button class="btn btn-primary btn-lg">Enroll</button>
+                                <button class="btn btn-primary btn-lg" onclick="enroll(<?php echo $course->id;?>)">Enroll</button>
                             </div>
                         </div>
                     @endif
                 </div>
             </div>
         </div>
-
     </div>
+    <script>
+        // Ajax submit course id to route enroll/store using post method
+        function enroll(course_id) {
+            $.ajax({
+                url: "{{ route('enroll.store') }}",
+                type: "POST",
+                data: {
+                    course_id: course_id,
+                    _token: "{{ csrf_token() }}"
+                },
+                success: function (data) {
+                    alert(data.message);
+                    // window.location.href = "{{ route('enroll.index') }}";
+                },
+                error: function (data) {
+                    alert(data.responseJSON.message);
+                }
+            });
+        }
+    </script>
 @endsection

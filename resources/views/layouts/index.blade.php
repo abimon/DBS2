@@ -29,6 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="/storage/front/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -63,7 +65,7 @@
                 </div> -->
                 <a href="/contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="{{ Auth()->user()?'/dashboard':'/login' }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{ Auth()->user() ? '/dashboard' : '/login' }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
