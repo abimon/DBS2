@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-body" id="modal-body">
                     <div class="display-6 text-center">
-                        <div>Already enrolled.</div>
+                        <div id="message"></div>
                         <i class="fas fa-exclamation-circle fa-3x"></i>
                     </div>
                 </div>
@@ -89,6 +89,7 @@
                 },
                 error: function (data) {
                     document.getElementById('modal-body').style.color = 'red';
+                    document.getElementById('message').innerHTML = data.responseJSON.message;
                     $('#enrollModal').modal('show');
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
