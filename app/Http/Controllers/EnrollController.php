@@ -30,7 +30,7 @@ class EnrollController extends Controller
     public function store(Request $request)
     {
         Enroll::create([
-            'user_id' => request('user_id'),
+            'student_id' => request('user_id'),
             'course_id' => request('course_id'),
         ]);
         return response()->json(['message' => 'Enrolled Successfully'], 200);
