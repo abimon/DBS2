@@ -8,7 +8,7 @@
                     <div class="col-md-4">
                         <label for="cover"><b>Course Cover Photo</b></label>
                         <div class="ms-2 card p-3 border-dark bg-transparent shadow h-75" style="border-style:dashed;">
-                            <img id="outCard" src="" style="height: 100%; object-fit:contain;" />
+                            <img id="outCard" src="{{ old('cover') }}" style="height: 100%; object-fit:contain;" />
                             <input type="file" accept="image/*" name="cover" id="cover" style="display: none;"
                                 class="form-control" onchange="loadcoverFile(event)">
                             <div class="pt-2" id="desc">
@@ -26,7 +26,6 @@
                                     var image = document.getElementById('outCard');
                                     image.src = URL.createObjectURL(event.target.files[0]);
                                     document.getElementById('cover').value == image.src;
-
                                 };
                             </script>
                         </div>
@@ -34,7 +33,7 @@
                     <div class="col-md-8">
                         <div class="mb-3">
                             <label for="title" class="form-label"><b>Title</b></label>
-                            <input type="text" class="form-control" id="title" name="title" required>
+                            <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" required>
                             <small id="titleHelp" class="form-text text-muted">Enter the title of the course.</small>
                             @error('title')
                                 <span class="invalid-feedback" role="alert">
@@ -45,7 +44,7 @@
                         
                         <div class="mb-3">
                             <label for="duration" class="form-label">Duration(Hrs)</label>
-                            <input type="number" class="form-control" id="duration" name="duration" required>
+                            <input type="number" value="{{ old('duration') }}" class="form-control" id="duration" name="duration" required>
                             <small id="durationHelp" class="form-text text-muted">Enter the duration of the course in
                                 hours.</small>
                             @error('instructor_id')
@@ -58,7 +57,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label"><b>Description</b></label>
-                    <textarea class="form-control" id="post" name="description" rows="3" ></textarea>
+                    <textarea class="form-control" id="post" name="description" rows="3" >{{ old('description') }}</textarea>
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

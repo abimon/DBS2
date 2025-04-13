@@ -9,6 +9,7 @@ use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +32,12 @@ Route::middleware('auth')->group(function () {
         'answer'=>AnswerController::class,
         'attempt'=>AttemptController::class,
         'enroll'=>EnrollController::class,
+        'user'=>UserController::class,
     ]);
+    Route::get('/learners',function(){
+        return view('dashboard.user.index',['title'=>'Learners']);
+    });
+    Route::get('/tutors', function () {
+        return view('dashboard.user.index',['title'=>'Tutors']);
+    });
 });

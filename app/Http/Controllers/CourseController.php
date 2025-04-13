@@ -44,6 +44,9 @@ class CourseController extends Controller
             $filename = time().$file->getClientOriginalExtension();
             $file->move('storage/uploads/course/',$filename);
         }
+        else{
+            return back()->with('error','Please select a cover image')->withInput();
+        }
         Course::create([
             'title'=> request('title'),
             'description'=> request('description'),

@@ -38,37 +38,6 @@
     </div>
     <!-- Spinner End -->
 
-
-    <!-- Topbar Start -->
-    <!-- <div class="container-fluid bg-dark text-light p-0">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-map-marker-alt text-light me-2"></small>
-                    <small>123 Street, New York, USA</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <small class="far fa-clock text-light me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-phone-alt text-light me-2"></small>
-                    <small>+012 345 6789</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Topbar End -->
-
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
@@ -79,10 +48,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/about" class="nav-item nav-link">About</a>
+                <a href="/courses" class="nav-item nav-link">Courses</a>
+                <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="feature.html" class="dropdown-item">Features</a>
@@ -91,10 +60,10 @@
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div> -->
+                <a href="/contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{ Auth()->user()?'/dashboard':'/login' }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -105,10 +74,10 @@
             <div class="row g-5">
                 <div class="col-md-4">
                     <h4 class="text-white mb-4">Get In Touch</h4>
-                    <h2 class="text-primary mb-4"><i class="fa fa-car text-white me-2"></i>Drivin</h2>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <h2 class="text-light mb-4"><i class="fa fa-book text-light me-2"></i>The Heart-Ed</h2>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Nairobi, Kenya</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254 700000000</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@thehearthed.org</p>
                 </div>
                 <div class="col-md-4">
                     <h4 class="text-light mb-4">Quick Links</h4>
@@ -126,13 +95,13 @@
                             <button class="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
-                    <h6 class="text-white mt-4 mb-3">Follow Us</h6>
+                    <!-- <h6 class="text-white mt-4 mb-3">Follow Us</h6>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-youtube"></i></a>
                         <a class="btn btn-square btn-outline-light me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -145,12 +114,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                    <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    &copy;{{ date('Y') }} <a href="#" class="text-light">The Heart-Ed</a>, All Right Reserved.
                 </div>
             </div>
         </div>
