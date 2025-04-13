@@ -35,6 +35,11 @@
             </div>
         </div>
     </div>
+    <!-- modal button -->
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-primary btn-lg" data-bs-target="#enrollModal" data-bs-toggle="modal">Enroll</button>
+    </div>
+</div>
     <!-- Modal for successifully enrolling in the course -->
     <div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
         <div class="modal-dialog">
