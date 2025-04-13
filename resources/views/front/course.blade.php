@@ -1,8 +1,9 @@
 @extends('layouts.index', ['title' => $course->title])
 @section('content')
     <div class="container-fluid">
-        <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s" style="background-image: url(<?php echo $course->cover;?>);">
-            <div class="container text-center" >
+        <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s"
+            style="background-image: url(<?php echo $course->cover;?>);">
+            <div class="container text-center">
                 <h1 class="display-5 text-white animated slideInDown mb-4">{{$course->title}}</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
@@ -17,10 +18,19 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="text-primary text-uppercase mb-2">{{$course->title}}</h6>
-                    <h1 class="display-6 mb-4">Our Courses Upskill Your Understanding of the Bible</h1>
+
                 </div>
-                <div class="">
-                    <?php echo html_entity_decode($course->description);?>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="display-6 mb-4">Course Description</h1>
+                        <?php echo html_entity_decode($course->description);?>
+                    </div>
+                    @if($course->curriculum != null)
+                        <div class="col-md-6">
+                            <h1 class="display-6 mb-4">Course Curriculum</h1>
+                            <?php echo html_entity_decode($course->curriculum);?>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
