@@ -27,13 +27,17 @@ class EnrollController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
-        Enroll::create([
-            'student_id' => request('user_id'),
-            'course_id' => request('course_id'),
-        ]);
-        return response()->json(['message' => 'Enrolled Successfully'], 200);
+        if (Enroll::where([['student_id', request('user_id')],['course_id', request('course_id')]])->exists()) {
+            return response()->json(['message' => 'Already Enrolled for this course'], 400);
+        } else {
+            Enroll::create([
+                'student_id' => request('user_id'),
+                'course_id' => request('course_id'),
+            ]);
+            return response()->json(['message' => 'Enrolled for this Successfully'], 200);
+        }
     }
 
     /**
@@ -41,7 +45,7 @@ class EnrollController extends Controller
      */
     public function show(Enroll $enroll)
     {
-        
+
     }
 
     /**

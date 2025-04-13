@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="display-6 text-center text-success">
-                        You have successfully enrolled in the course!
+                        <div id="message"></div>
                         <i class="fa fa-check-circle"></i>
                     </div>
                 </div>
@@ -57,8 +57,30 @@
     <script>
         // Ajax submit course id to route enroll/store using post method
         function enroll(course_id) {
-            $('#enrollModal').modal('show');
-            console.log('button clicked');
+            $.ajax({
+                url: "{{ route('enroll.store') }}",
+                type: "POST",
+                data: {
+                    course_id: course_id,
+                    _token: "{{ csrf_token() }}",
+                    user_id: '{{ Auth()->user()->id }}'
+                },
+                success: function (data) {
+                    document.getElementById('message').innerHTML = data.message;
+                    $('#enrollModal').modal('show');
+                    setTimeout(function () {
+                        $('#enrollModal').modal('hide');
+                    }, 5000);
+                },
+                error: function (data) {
+                    document.getElementById('message').innerHTML = data.message;
+                    $('#enrollModal').modal('show');
+                    setTimeout(function () {
+                        $('#enrollModal').modal('hide');
+                    }, 5000);
+                }
+            });
+
         }
     </script>
 @endsection
