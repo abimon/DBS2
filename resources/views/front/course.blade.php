@@ -73,11 +73,7 @@
                     }, 5000);
                 },
                 error: function (data) {
-                    document.getElementById('message').innerHTML = data.message;
-                    $('#enrollModal').modal('show');
-                    setTimeout(function () {
-                        $('#enrollModal').modal('hide');
-                    }, 5000);
+                    alert(data.responseJSON.message);
                 }
             });
 
