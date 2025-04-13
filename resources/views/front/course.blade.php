@@ -27,10 +27,24 @@
                             <?php    echo html_entity_decode($course->curriculum);?>
                             <h2 class="display-12">{{ $course->modules->count() }} Modules</h2>
                             <div class="d-flex justify-content-end">
-                                <button class="btn btn-primary btn-lg" onclick="enroll(<?php echo $course->id;?>)">Enroll</button>
+                                <button class="btn btn-primary btn-lg" onclick="enroll(<?php    echo $course->id;?>)">Enroll</button>
                             </div>
                         </div>
                     @endif
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for successifully enrolling in the course -->
+    <div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="enrollModalLabel">Enroll in the course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="display-12 text-success">You have successfully enrolled in the course!</div>
                 </div>
             </div>
         </div>
@@ -47,8 +61,11 @@
                     user_id:'{{ Auth()->user()->id }}'
                 },
                 success: function (data) {
-                    alert(data.message);
-                    // window.location.href = "{{ route('enroll.index') }}";
+                    // show enrollmodal that will automatically close after 5 seconds
+                    $('#enrollmodal').modal('show');
+                    setTimeout(function () {
+                        $('#enrollmodal').modal('hide');
+                    }, 5000);
                 },
                 error: function (data) {
                     alert(data.responseJSON.message);
