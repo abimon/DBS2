@@ -63,7 +63,7 @@
                 </div>
                 <div class="modal-body" id="modal-body">
                     <div class="display-6 text-center">
-                        <div id="message"></div>
+                        <div id="message2"></div>
                         <i class="fas fa-check-circle fa-3x"></i>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                     user_id: '{{ Auth()->user()->id }}'
                 },
                 success: function (data) {
-                    document.getElementById('message').innerHTML = data.responseJSON.message;
+                    document.getElementById('message2').innerHTML = data.responseJSON.message;
                     document.getElementById('modal-body').class = 'text-success';
                     $('#enrollModalsuccess').modal('show');
                     setTimeout(function () {
