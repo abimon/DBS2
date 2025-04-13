@@ -43,7 +43,8 @@
                 type: "POST",
                 data: {
                     course_id: course_id,
-                    _token: "{{ csrf_token() }}"
+                    _token: "{{ csrf_token() }}",
+                    user_id:'{{ Auth()->user()->id }}'
                 },
                 success: function (data) {
                     alert(data.message);
