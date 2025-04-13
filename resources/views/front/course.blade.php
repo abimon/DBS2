@@ -31,5 +31,6 @@
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary">Enroll</button>
     </div>
 @endsection
