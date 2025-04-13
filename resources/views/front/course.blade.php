@@ -46,7 +46,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="display-6 text-center text-success">You have successfully enrolled in the course!</div>
+                    <div class="display-6 text-center text-success">
+                        You have successfully enrolled in the course!
+                        <i class="fa fa-check-circle"></i>
+                    </div>
                 </div>
             </div>
         </div>
