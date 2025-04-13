@@ -29,7 +29,7 @@ class EnrollController extends Controller
      */
     public function store()
     {
-        if (Enroll::where([['student_id', request('user_id')],['course_id', request('course_id')]])->exists()) {
+        if (Enroll::where([['student_id', request('user_id')],['course_id', request('course_id')]])->first()) {
             return response()->json(['message' => 'Already Enrolled for this course'], 400);
         } else {
             Enroll::create([
