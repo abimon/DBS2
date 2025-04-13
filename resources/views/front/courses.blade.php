@@ -36,7 +36,7 @@
                                 <div class="position-relative mt-auto">
                                     <img class="img-fluid" src="{{$course->cover}}" alt="">
                                     <div class="courses-overlay">
-                                        <a class="btn btn-outline-primary border-2" href="{{ $course->slug }}">Read More</a>
+                                        <a class="btn btn-outline-primary border-2" href="/courses/{{ $course->slug }}">Read More</a>
                                     </div>
                                 </div>
                             </div>
