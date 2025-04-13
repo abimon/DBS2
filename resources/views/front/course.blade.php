@@ -45,7 +45,7 @@
                     <h5 class="modal-title" id="enrollModalLabel">Enroll in the course</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="modal-body">
                     <div class="display-6 text-center">
                         <div id="message"></div>
                         <i class="fa fa-check-circle fa-3x"></i>
