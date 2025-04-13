@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Theme;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class CourseController extends Controller
 {
@@ -49,7 +50,7 @@ class CourseController extends Controller
         }
         Course::create([
             'title' => request('title'),
-            'slug' => str()->slug(request('title')),
+            'slug' => Str::slug(request('title'),'_'),
             'description' => request('description'),
             'estimate_duration' => request('duration'),
             'cover' => '/storage/uploads/course/' . $filename,
@@ -90,7 +91,7 @@ class CourseController extends Controller
         $course = Course::findOrFail($id);
         if (request('title') != null) {
             $course->title = request('title');
-            $course->slug = str()->slug(request('title'));
+            $course->slug = Str::slug(request('title'),'_');
         }
         if (request('description') != null) {
             $course->description = request('description');

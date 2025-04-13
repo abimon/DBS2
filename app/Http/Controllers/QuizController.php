@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class QuizController extends Controller
 {
@@ -38,6 +39,7 @@ class QuizController extends Controller
         ]);
         Quiz::create([
             "title"=>request('title'),
+            "slug"=>Str::slug(request('title')),
             "description"=>request('description'),
             "created_by"=>Auth::user()->id,
             "module_id"=>request('module_id'),

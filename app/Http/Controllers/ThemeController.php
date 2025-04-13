@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Theme;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use League\CommonMark\Extension\DescriptionList\Node\Description;
 
 class ThemeController extends Controller
@@ -45,7 +46,7 @@ class ThemeController extends Controller
         }
         Theme::create([
             'title' => request('title'),
-            'slug' => str()->slug(request('title')),
+            'slug' => Str::slug(request('title'),'_'),
             'description' => request('description'),
             'cover' => '/storage/uploads/themes/' . $filename,
             'created_by' => Auth::user()->id,
@@ -80,7 +81,7 @@ class ThemeController extends Controller
         $theme = Theme::findOrFail($id);
         if (request('title') != null) {
             $theme->title = request('title');
-            $theme->slug = str()->slug(request('title'));
+            $theme->slug = Str::slug(request('title'),'_');
         }
         if (request('description') != null) {
             $theme->description = request('description');

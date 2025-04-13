@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Module;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ModuleController extends Controller
 {
@@ -39,7 +40,7 @@ class ModuleController extends Controller
         ]);
          Module::create([
             "title"=>request('title'),
-            'slug'=>str()->slug(request('title')),
+            'slug'=>Str::slug(request('title')),
             "content"=>request('content'),
             "course_id"=>request('course_id'),
             "created_by"=>Auth::user()->id,
@@ -76,7 +77,7 @@ class ModuleController extends Controller
         $module=Module::findOrFail($id);
         if(request('title')!=null){
             $module->title=request('title');
-            $module->slug=str()->slug(request('title'));
+            $module->slug=Str::slug(request('title'));
         }
         if(request('content')!=null){
             $module->content=request('content');
