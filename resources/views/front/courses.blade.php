@@ -30,7 +30,7 @@
                                     <h5 class="mb-3">{{$course->title}}</h5>
                                     <div class="d-flex justify-content-between mb-0">
                                         <span class="small"><i class="fa fa-clock text-primary me-2"></i> {{ $course->estimate_duration }}Hrs</span>
-                                        <span class="small"><i class="fa fa-graduation-cap text-primary me-2"></i> 200 Learners</span>
+                                        <span class="small"><i class="fa fa-clone text-primary me-2"></i> {{ $course->modules->count() }} Modules</span>
                                     </div>
                                 </div>
                                 <div class="position-relative mt-auto">
