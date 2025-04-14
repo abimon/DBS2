@@ -39,7 +39,7 @@ class CourseController extends Controller
             "description" => 'required',
             "duration" => 'required',
             "theme_id" => 'required',
-            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048`'
+            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
         if (request()->hasFile('cover')) {
             $file = request()->file('cover');

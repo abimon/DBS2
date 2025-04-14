@@ -5,6 +5,16 @@
             @csrf
             <div class="modal-body">
                 <div class="mb-3">
+                    <label for="title" class="form-label"><b>Title</b></label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                    <small id="titleHelp" class="form-text text-muted">Enter the title of the quiz.</small>
+                    @error('title')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="mb-3">
                     <label for="description" class="form-label"><b>Quiz Description</b></label>
                     <textarea class="form-control" id="post" name="description" rows="3" maxlength="250"></textarea>
                     @error('description')

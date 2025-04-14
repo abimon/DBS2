@@ -1,5 +1,5 @@
-@extends('layouts.dashboard', ['title' => 'Create Question'])
-@section('dashboard')
+@extends('layouts.app', ['title' => 'Create Question'])
+@section('content')
     <div class="container h-100" >
         <form action="{{route('question.store', ['quiz_id' => $q_id])}}" method="POST">
             @csrf
@@ -13,11 +13,13 @@
                         </span>
                     @enderror
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="isOpen" value="1">
-                    <label class="form-check-label" for="remember">
-                        {{ __('This is an open ended question') }}
-                    </label>
+                <div class="offset-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="isOpen" value="1">
+                        <label class="form-check-label" for="remember">
+                            {{ __('This is an open ended question') }}
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

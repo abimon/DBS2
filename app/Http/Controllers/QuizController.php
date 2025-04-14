@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Module;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,8 @@ class QuizController extends Controller
     public function index()
     {
         $quizzes = Quiz::where('module_id',request('module_id'))->get();
-        return view('dashboard.quiz.index', compact('quizzes'));
+        $module = Module::findOrFail(request('module_id'));
+        return view('dashboard.quiz.index', compact('quizzes','module'));
     }
 
     /**
@@ -44,7 +46,7 @@ class QuizController extends Controller
             "created_by"=>Auth::user()->id,
             "module_id"=>request('module_id'),
         ]);
-        return redirect()->route('dashboard.quiz.index', ['module_id' => request('module_id')])->with('success','Quiz created successfully');
+        return redirect()->route('quiz.index', ['module_id' => request('module_id')])->with('success','Quiz created successfully');
     }
 
     /**

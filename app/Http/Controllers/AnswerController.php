@@ -28,7 +28,12 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Answer::create([
+            "answer"=>request('answer'),
+            "isCorrect"=>request('isCorrect')?true:false,
+            "question_id"=>request('question_id'),
+        ]);
+        return back()->with('success','Answer Created Successfully');
     }
 
     /**

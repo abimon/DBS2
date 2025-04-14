@@ -42,7 +42,7 @@
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link" href="#" data-bs-toggle="dropdown" id="profileDropdown">
                             <img src="/storage/back/images/faces/face5.jpg" alt="profile" />
-                            <span class="nav-profile-name">{{ Auth()->user()->name }}</span>
+                            <span class="nav-profile-name">{{Auth()->user()->f_name . ' ' . Auth()->user()->l_name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">

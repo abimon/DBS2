@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\Quiz;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -12,7 +13,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::all();
+        $quiz=Quiz::findOrFail(request("quiz_id"));
+        return view("dashboard.question.index", compact("questions","quiz"));
     }
 
     /**
@@ -20,15 +23,21 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        $q_id = request('quiz_id');
+        return view("dashboard.question.create", compact("q_id"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        Question::create([
+            'quiz_id'=>request('quiz_id'),
+            'question'=>request('description'),
+            'isOpen'=>request('isOpen')?true:false
+        ]);
+        return redirect()->route('question.index',['quiz_id'=> request('quiz_id')])->with('success','Question created successfully.');
     }
 
     /**

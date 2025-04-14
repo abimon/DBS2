@@ -10,7 +10,7 @@
                         <i class="fa fa-book fa-3x text-dark"></i>
                         <div class="ms-3">
                             <p class="mb-2">Available Courses</p>
-                            <h6 class="mb-0">10</h6>
+                            <h6 class="mb-0">{{App\Models\Course::count()}}</h6>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                         <i class="fa fa-address-card fa-3x text-dark"></i>
                         <div class="ms-3">
                             <p class="mb-2">Enrolled Courses</p>
-                            <h6 class="mb-0">3</h6>
+                            <h6 class="mb-0">{{ App\Models\Enroll::where('student_id',Auth()->user()->id)->count() }}</h6>
                         </div>
                     </div>
                 </div>

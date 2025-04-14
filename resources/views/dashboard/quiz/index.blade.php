@@ -24,35 +24,17 @@
                         {{ $quiz->questions->count() }}
                     </div>
                 </div>
-                <div class="card-text" style="height:11vh; overflow:hidden;" id="description-{{$quiz->id}}">
+                <div class="card-text" id="description-{{$quiz->id}}">
                     <?php echo html_entity_decode($quiz->description); ?>
                 </div>
-                <p class="text-info" type="button" id="btn-{{$quiz->id}}" onclick="ShowDetails(<?php echo $quiz->id ?>)">More...</p>
-                <p class="text-info" type="button" style="display:none;" id="btn2-{{$quiz->id}}" onclick="HideDetails(<?php echo $quiz->id ?>)">Less...</p>
                 <div class="modal-footer">
-                    <a href="{{route('quiz.show', $quiz->id)}}" class="btn btn-sm btn-primary">Questions</a>
-                    <a class="btn btn-sm btn-info" href="{{ route('quiz.edit',$quiz->id) }}">Edit</a>
+                    <a href="{{route('quiz.show', $quiz->id)}}" class="btn btn-sm btn-primary me-2">Questions</a>
+                    <a class="btn btn-sm btn-info me-2" href="{{ route('quiz.edit',$quiz->id) }}">Edit</a>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#deletequizs{{$quiz->id}}" class="btn btn-sm btn-danger">Delete</button>
                 </div>
             </div>
         </div>
         <hr>
-        <script>
-            function ShowDetails(id) {
-                console.log(id);
-                var desc = document.getElementById("description-" + id);
-                desc.style.height = "";
-                document.getElementById("btn-" + id).style.display = "none";
-                document.getElementById("btn2-" + id).style.display = "";
-            }
-
-            function HideDetails(id) {
-                var desc = document.getElementById("description-" + id);
-                desc.style.height = "11vh";
-                document.getElementById("btn-" + id).style.display = "";
-                document.getElementById("btn2-" + id).style.display = "none";
-            }
-        </script>
         <div class="modal fade" id="deletequizs{{$quiz->id}}" tabindex="-1" aria-labelledby="addquizsLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
