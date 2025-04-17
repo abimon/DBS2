@@ -27,8 +27,20 @@
                             <?php    echo html_entity_decode($course->curriculum);?>
                             <h2 class="display-12">{{ $course->modules->count() }} Modules</h2>
                             <div class="d-flex justify-content-end">
-                                <button class="btn btn-primary btn-lg"
-                                    onclick="enroll(<?php    echo $course->id;?>)">Enroll</button>
+                                @auth
+                                @if(Auth()->user()->enrolls->where('course_id', $course->id)->count() == 0)
+                                    <button class="btn btn-primary btn-lg"
+                                        onclick="enroll(<?php        echo $course->id;?>)">Enroll</button>
+                                @else
+                                    <a href="/course/study/{{ $course->slug}}">
+                                        <button class="btn btn-primary btn-lg">Continue Reading...</button>
+                                    </a>
+                                @endif
+                                @else
+                                <a href="/login">
+                                    <button class="btn btn-primary btn-lg">Login to Enroll</button>
+                                </a>
+                                @endauth
                             </div>
                         </div>
                     @endif

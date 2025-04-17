@@ -22,6 +22,12 @@ class HomeController extends Controller
         $course = Course::where('slug',$slug)->first();
         return view('front.course',compact('course'));
     }
+    public function courses_study($slug)
+    {
+        $course = Course::where('slug', $slug)->first();
+        $enroll = Enroll::where([['student_id', Auth::user()->id], ['course_id', $course->id]])->first();
+        return view('front.study', compact('enroll'));
+    }
     public function mycourses(){
         $enrolls = Enroll::where([['student_id',Auth::user()->id],['status','Enrolled']])->get();
         return view('dashboard.course.mycourses',compact('enrolls'));

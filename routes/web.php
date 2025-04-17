@@ -22,7 +22,8 @@ Route::controller(HomeController::class)->group(function (){
     Route::get('/courses', 'courses');
     Route::get('/dashboard', 'index')->middleware('auth');
     Route::get('/courses/{course}','courses_view');
-    Route::get('/my-courses','mycourses')->middleware('auth');
+    Route::get('/course/study/{slug}','courses_study')->middleware('auth');
+    Route::get('/my-courses', 'mycourses')->middleware('auth');
 });
 Route::middleware('auth')->group(function () {
     Route::resources([
