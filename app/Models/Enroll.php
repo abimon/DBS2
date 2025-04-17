@@ -9,7 +9,9 @@ class Enroll extends Model
     //
     protected $fillable = [
         'student_id',
-        'course_id'
+        'course_id',
+        'status',
+        'comment'
     ];
     public function student()
     {

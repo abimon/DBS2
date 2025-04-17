@@ -21,10 +21,10 @@ Auth::routes();
 Route::controller(HomeController::class)->group(function (){
     Route::get('/courses', 'courses');
     Route::get('/dashboard', 'index')->middleware('auth');
-    Route::get('/courses/{course}','courses_view')->middleware('auth');
+    Route::get('/courses/{course}','courses_view');
+    Route::get('/my-courses','mycourses')->middleware('auth');
 });
 Route::middleware('auth')->group(function () {
-    
     Route::resources([
         'theme'=>ThemeController::class,
         'course'=>CourseController::class,

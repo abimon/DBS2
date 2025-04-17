@@ -79,7 +79,6 @@
                 data: {
                     course_id: course_id,
                     _token: "{{ csrf_token() }}",
-                    user_id: '{{ Auth()->user()->id }}'
                 },
                 success: function (data) {
                     $('#enrollModalsuccess').modal('show');
@@ -94,9 +93,11 @@
                     setTimeout(function () {
                         $('#enrollModal').modal('hide');
                     }, 3000);
+                    console.log(data.responseJSON.message);
+                    if (data.responseJSON.message == 'Unauthenticated.')
+                        window.location.href = "{{ route('login') }}";
                 }
             });
-
         }
     </script>
 @endsection

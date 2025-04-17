@@ -13,7 +13,8 @@ class EnrollController extends Controller
      */
     public function index()
     {
-        //
+        $enrolls = Enroll::all();
+        return view("dashboard.enroll.index", compact("enrolls"));
     }
 
     /**
@@ -29,11 +30,11 @@ class EnrollController extends Controller
      */
     public function store()
     {
-        if (Enroll::where([['student_id', request('user_id')],['course_id', request('course_id')]])->first()) {
+        if (Enroll::where([['student_id', Auth::user()->id], ['course_id', request('course_id')]])->first()) {
             return response()->json(['message' => 'Already Enrolled for this course'], 400);
         } else {
             Enroll::create([
-                'student_id' => request('user_id'),
+                'student_id' => Auth::user()->id,
                 'course_id' => request('course_id'),
             ]);
             return response()->json(['message' => 'Enrolled for this course Successfully'], 200);
@@ -45,7 +46,7 @@ class EnrollController extends Controller
      */
     public function show(Enroll $enroll)
     {
-
+        //
     }
 
     /**
@@ -59,16 +60,25 @@ class EnrollController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Enroll $enroll)
+    public function update($id)
     {
-        //
+        $enroll = Enroll::findOrFail($id);
+        if(request('status')) {
+            $enroll->status = request('status');
+        }
+        if(request('comment')) {
+            $enroll->comment = request('comment');
+        }
+        $enroll->update();
+        return back()->with('message','Enrolled Course Updated Successfully');  
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Enroll $enroll)
+    public function destroy($id)
     {
-        //
+        Enroll::destroy($id);
+        return back()->with('success', 'Enrolled Course Deleted Successfully');  
     }
 }
