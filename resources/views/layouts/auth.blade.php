@@ -26,7 +26,7 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-start py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="/storage/back/images/logo-dark.svg" alt="logo">
+                                <h2 class="text-center fw-bold">THE HEART-ED</h2>
                             </div>
                             @yield('form')
                         </div>

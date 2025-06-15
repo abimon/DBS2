@@ -22,6 +22,7 @@
 
     <!-- Libraries Stylesheet -->
     <link href="/storage/front/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/storage/front/style.css" rel="stylesheet">
     <link href="/storage/front/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->

@@ -1,0 +1,395 @@
+.prim {
+    color: #141430;
+}
+
+.bg-prim {
+    background-color: #141430;
+}
+
+html {
+    background-color: #E9F2F8;
+}
+
+/*********************************
+ * HOME *
+*********************************/
+.school {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.school h1 {
+    color: white;
+    font-size: 3.8vw;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.school p {
+    color: white;
+    font-size: 2vw;
+    text-align: left;
+}
+
+.button {
+    border-radius: 12px;
+    padding: 4px 14px 4px 14px;
+    font-size: small;
+    color: white;
+    background-color: #141430;
+    font-family: Montserrat;
+}
+
+.banner {
+    z-index: -1;
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: aliceblue;
+}
+
+.about {
+    width: 50%;
+    position: relative;
+    left: 25%;
+    top: -20vh;
+    z-index: 1;
+    border-radius: 12px;
+    text-align: center;
+    padding: 2rem;
+    background-color: #141430;
+}
+
+.about h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.about p {
+    color: white;
+    font-family: Montserrat;
+    font-size: 1.2vw;
+}
+
+.dropdown-toggle {
+    border: 2px solid #141430;
+    width: 100%;
+}
+
+/* .sidebar{
+    width:15vw;
+} */
+@media (max-width:760px) {
+    #btn {
+        display: none;
+    }
+
+    .school h1 {
+        font-size: 4.8vw;
+    }
+
+    .school p {
+        font-size: 3vw;
+    }
+
+    .about {
+        width: 80%;
+        left: 10%;
+    }
+
+    .about h2 {
+        font-size: 3vw;
+    }
+
+    .about p {
+        font-size: 2.2vw;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar li {
+        float: left;
+        margin-right: 5vw;
+    }
+
+    .sidebar li a {
+        display: block;
+        text-decoration: none;
+        overflow: hidden;
+        text-wrap: nowrap;
+        color: #141430;
+    }
+    .dlogo {
+        display: none;
+    }
+
+}
+
+@media (min-width:760px) {
+    #profile {
+        display: flex;
+    }
+
+    .sidebar {
+        width: 20%;
+    }
+
+    .sidebar li a {
+        text-decoration: none;
+        overflow: hidden;
+        text-wrap: nowrap;
+        color: #141430;
+    }
+    .main{
+        margin-top: 100px;
+        width:70%;
+    }
+    .mbutton{
+        font-size: 3vw;
+    }
+}
+
+.cover {
+    position: relative;
+}
+
+.camera {
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    font-size: xx-large;
+}
+
+.cam {
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    font-size: x-large;
+}
+
+.programs {
+    position: relative;
+    z-index: 1;
+    font-weight: bolder;
+    background-color: #E9F2F8;
+    color: #141430;
+    text-align: center;
+}
+
+.programs p {
+    font-weight: bold;
+    font-family: Montserrat;
+}
+
+#resources p {
+    font-size: 3vw;
+}
+
+.programs i {
+    font-size: 4vw;
+}
+
+#about_program {
+    /* margin: 5%; */
+    border-radius: 24px;
+    color: #141430;
+    background-color: #E9F2F8;
+    padding: 2vw;
+
+}
+
+#about_program .row {
+    margin-left: 10%;
+    width: 80%;
+}
+
+#about_program h1 {
+    font-family: Montserrat;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 4vw;
+}
+
+#about_program h2 {
+    font-family: Montserrat;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+#about_program .program {
+    font-family: Montserrat;
+    color: black;
+    margin-top: 2vh;
+    font-size: 2vw;
+    font-weight: bolder;
+}
+
+#message {
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 2vw;
+}
+
+#message h1 {
+    font-weight: bolder;
+    color: #141430;
+    font-family: Montserrat;
+}
+
+#message a {
+    font-family: Montserrat;
+    color: #141430;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.mbutton {
+    border-radius: 15px;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: Montserrat;
+    background-color: #141430;
+    color: white;
+}
+
+#help {
+    padding: 15vh 0 15vh 0;
+    margin-top: 10vh;
+    background-position: center;
+}
+
+#help .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 6vw;
+    color: white;
+    font-family: Montserrat;
+}
+
+#help button {
+    border-radius: 20px;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: Montserrat;
+}
+
+#connect {
+    margin: 0px 3vw 0px 3vw;
+    font-family: Montserrat;
+    color: #141430;
+
+}
+
+#connect .title {
+    font-weight: bolder;
+    font-family: Montserrat;
+    /* font-size:3vw; */
+}
+
+#connect input {
+    border: 2px solid #141430;
+}
+
+#connect p {
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+#connect input:focus {
+    border: none;
+    border-bottom: 2px solid #141430;
+
+}
+
+#connect input {
+    background-color: #E9F2F8;
+}
+
+#connect input::placeholder {
+    font-weight: bold;
+    color: #141430;
+    font-family: Montserrat;
+}
+
+.bottom {
+    margin: 0;
+    background-color: #E9F2F8;
+}
+
+.bottom .mail {
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+.form {
+    background-color: #141430;
+    padding: 4vw;
+    border-radius: 12px;
+    font-family: Montserrat;
+    font-weight: bold;
+
+}
+
+.left-sidebar .upgrade-btn {
+    display: none;
+}
+
+.login {
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    color: #141430;
+}
+
+#profile {
+    background-color: #E9F2F8;
+    min-height: 100vh;
+}
+
+#profile .car {
+    background-color: #E9F2F8;
+    border-radius: 12px;
+    padding: 0;
+}
+
+#profile .car img {
+    object-fit: cover;
+    height: 20vh;
+    margin: 0px;
+    border-radius: 12px 12px 0px 0px;
+    /* image-orientation: 10deg; */
+}
+
+#profile .car .icon {
+    position: relative;
+    z-index: 1;
+    top: -1em;
+    color: black;
+    font-weight: bolder;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    background-color: #E9F2F8;
+    font-size: 4em;
+}
+
+.progression ul {
+    list-style: none;
+}
+
+footer {
+    background-color: #141430;
+    color: white;
+    font-family: Montserrat;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
