@@ -149,19 +149,19 @@
                                 <a href="">{{$theme->title}}</a>
                                 <p><?php    echo mb_substr(html_entity_decode($theme->description), 0, 40); ?>...</p>
                             </div>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#{{$course->slug}}">Details...</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#{{$theme->slug}}">Details...</a>
                         </div>
-                        <div class="modal fade" id="{{$course->slug}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="{{$theme->slug}}" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$course->title}}</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$theme->title}}</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <?php    echo html_entity_decode($course->description); ?>
+                                        <?php    echo html_entity_decode($theme->description); ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn button bg-danger"
