@@ -139,15 +139,15 @@
             <div id="message">
                 <h1>Latest Series</h1>
                 <div class="row d-flex justify-content-start">
-                    @foreach(App\Models\Course::get() as $course)
+                    @foreach(App\Models\Theme::get() as $theme)
                         <div class="col-lg-3 col-md-4 col-6 p-2">
                             <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid" src="{{asset('storage/covers/' . $course->cover_path)}}"
+                                <img class="img-fluid" src="{{ $theme->cover}}"
                                     style='height:30vh;width:100%;object-fit:cover;' alt="">
                             </div>
                             <div class="border-top">
-                                <a href="">{{$course->title}}</a>
-                                <p><?php    echo mb_substr(html_entity_decode($course->description), 0, 40); ?>...</p>
+                                <a href="">{{$theme->title}}</a>
+                                <p><?php    echo mb_substr(html_entity_decode($theme->description), 0, 40); ?>...</p>
                             </div>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#{{$course->slug}}">Details...</a>
                         </div>
