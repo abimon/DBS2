@@ -139,7 +139,7 @@
             <div id="message">
                 <h1>Latest Series</h1>
                 <div class="row d-flex justify-content-start">
-                    @foreach(App\Models\Theme::get() as $theme)
+                    @foreach(App\Models\Theme::orderBy('id', 'desc')->take(3) as $theme)
                         <div class="col-lg-3 col-md-4 col-6 p-2">
                             <div class="position-relative bg-light overflow-hidden">
                                 <img class="img-fluid" src="{{ $theme->cover}}"
