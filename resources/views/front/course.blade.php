@@ -32,7 +32,7 @@
                                     <button class="btn btn-primary btn-lg"
                                         onclick="enroll(<?php        echo $course->id;?>)">Enroll</button>
                                 @else
-                                    <a href="/course/study/{{ $course->slug}}">
+                                    <a href="/course/study/{{ $course->modules->first()->slug}}">
                                         <button class="btn btn-primary btn-lg">Continue Reading...</button>
                                     </a>
                                 @endif

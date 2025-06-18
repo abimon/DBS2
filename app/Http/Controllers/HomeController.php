@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Enroll;
+use App\Models\Module;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,11 +24,17 @@ class HomeController extends Controller
         return view('front.course',compact('course'));
     }
     public function courses_study($slug)
-    {
-        $course = Course::where('slug', $slug)->first();
-        $enroll = Enroll::where([['student_id', Auth::user()->id], ['course_id', $course->id]])->first();
-        return view('front.study', compact('enroll'));
+    {  
+        $module=Module::where('slug', $slug)->firstOrFail();
+        $enroll=Enroll::where([['student_id',Auth::user()->id],['course_id',$module->course_id]])->first();
+        if(request('next')=='true'){
+            $enroll->progress = $enroll->progress + 1;
+            $enroll->update();
+        }
+        $progress = $enroll->progress;
+        return view('front.study', compact('module','progress'));
     }
+    
     public function mycourses(){
         $enrolls = Enroll::where([['student_id',Auth::user()->id],['status','Enrolled']])->get();
         return view('dashboard.course.mycourses',compact('enrolls'));

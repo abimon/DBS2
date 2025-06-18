@@ -38,9 +38,10 @@ class ModuleController extends Controller
             "title"=>'required',
             "content"=>'required',
         ]);
+        $title = str_replace('?', '', request('title'));
          Module::create([
             "title"=>request('title'),
-            'slug'=>Str::slug(request('title')),
+            'slug'=>Str::slug($title),
             "content"=>request('content'),
             "course_id"=>request('course_id'),
             "created_by"=>Auth::user()->id,
@@ -72,12 +73,11 @@ class ModuleController extends Controller
      */
     public function update($id)
     {
-        //
-        // dd(request());
         $module=Module::findOrFail($id);
         if(request('title')!=null){
             $module->title=request('title');
-            $module->slug=Str::slug(request('title'));
+            $title = str_replace('?', '', request('title'));
+            $module->slug=Str::slug($title);
         }
         if(request('content')!=null){
             $module->content=request('content');
