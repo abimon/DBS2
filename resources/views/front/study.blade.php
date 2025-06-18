@@ -44,6 +44,7 @@
                                     echo html_entity_decode("<div>You have completed all lessons</div><a class='btn btn-outline-primary border-2' href='/courses'>Back to Courses</a>");
                                 }
                             } else {
+                                echo html_entity_decode($lesson->title);
                                 echo html_entity_decode($lesson->content);
                                 
                             }
