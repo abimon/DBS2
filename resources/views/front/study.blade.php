@@ -46,6 +46,8 @@
                             @if (isset($module->next))
                                 <a class='btn btn-outline-primary border-2'
                                     href='/course/study/{{ $module->next->slug }}?next=true'>Next Lesson</a>
+                            @else
+                                <a class='btn btn-outline-primary border-2' href='/courses'>Back to Courses</a>
                             @endif
                         </div>
                         <div class="text-end">
