@@ -43,16 +43,19 @@
                                     Lesson</a>
                             @endif
 
-                            @if (isset($module->next))
-                                <a class='btn btn-outline-primary border-2'
-                                    href='/course/study/{{ $module->next->slug }}?next=true'>Next Lesson</a>
-                            @else
-                                <a class='btn btn-outline-primary border-2' href='/courses'>Back to Courses</a>
-                            @endif
+                            <div class="">
+                                @if (isset($module->next))
+                                    <a class='btn btn-outline-primary border-2'
+                                        href='/course/study/{{ $module->next->slug }}?next=true'>Next Lesson</a>
+                                @else
+                                    <a class='btn btn-outline-primary border-2' href='/courses'>Back to Courses</a>
+                                @endif
+                                <div class="text-end ms-3">
+                                    <button class="btn btn-secondary" onclick="printPage()"><i class="fa fa-printer"></i>Print</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-end">
-                            <button class="btn btn-secondary" onclick="printPage()">Print</button>
-                        </div>
+
                     </div>
                 </div>
             </div>
