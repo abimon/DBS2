@@ -50,9 +50,8 @@
                                 @else
                                     <a class='btn btn-outline-primary border-2' href='/courses'>Back to Courses</a>
                                 @endif
-                                <div class="text-end ms-3">
                                     <button class="btn btn-secondary" onclick="printPage()"><i class="fa fa-printer"></i>Print</button>
-                                </div>
+                
                             </div>
                         </div>
 
